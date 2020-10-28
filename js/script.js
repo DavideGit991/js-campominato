@@ -8,7 +8,7 @@
 // La partita termina quando il giocatore inserisce un numero “vietato” o raggiunge il numero massimo possibile di numeri consentiti.
 // Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha inserito un numero consentito.
 var numBombe = 16;
-var possibilitàUte = 18;
+var possibilitàUte = 100;
 var tentativi = possibilitàUte - numBombe;
 var arrayNumBombe=[];
 var arrayNumUte=[];
@@ -52,6 +52,7 @@ for(i=1; i<=tentativi; i++)
   else if (arrayNumBombe.indexOf(numeroUte) != -1)
   {
     console.log("hai PERSO e il tuo punteggio e': ", punteggio );
+    break;
   }
 
 }
