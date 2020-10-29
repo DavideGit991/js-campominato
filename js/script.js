@@ -83,9 +83,13 @@ function()
        //se non c'è e finisco il massimo numero di tentativi pusho in un arraynumeri utente e punteggio++ e l'utente ha vinto
       if (arrayNumBombe.indexOf(numeroUte) == -1 && (arrayNumUte.length + 1) == tentativi )
       {
+        punteggio += 1;
         arrayNumUte.push(numeroUte);
         console.log("arrayUte: ", arrayNumUte);
         console.log("hai VINTO ed hai totalizzato: ", punteggio , "punti" );
+        document.getElementById("punteggio").innerHTML = punteggio;
+        document.getElementById("esito").innerHTML = "HAI VINTO E HAI TOT IL MAX PUNTEGGIO";
+        // alert('HAI VINTO E HAI TOT IL MAX PUNTEGGIO');
       }
 
       //se non c'è pusho in un arraynumeri utente e punteggio++
@@ -95,6 +99,7 @@ function()
         arrayNumUte.push(numeroUte);
         console.log("arrayUte: ", arrayNumUte);
         console.log("Punteggio parziale: ", punteggio);
+        document.getElementById("punteggio").innerHTML = punteggio;
       }
 
       //se c'è gioco finito e stampo quanti punti o "giri" l'utente ha fatto e gli dico hai perso
@@ -102,6 +107,7 @@ function()
       {
         console.log("ultimo numero scelto e': ", numeroUte);
         console.log("hai PERSO e il tuo punteggio e': ", punteggio );
+        document.getElementById("esito").innerHTML = "HAI PERSO MI DISPIACE";
         break;
       }
 
