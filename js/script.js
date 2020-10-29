@@ -16,7 +16,7 @@ var punteggio = 0
 var bfacile = document.getElementById("facile");
 var bmedio = document.getElementById("medio");
 var bdifficile = document.getElementById("difficile");
-
+var breset = document.getElementById("reset");
 
 var stampa1 = "";
 var stampa2 = "";
@@ -28,6 +28,7 @@ while(arrayNumBombe.length < 16)
    if (arrayNumBombe.indexOf(n) == -1)
    {
     arrayNumBombe.push(n);
+
     //stampo a video gli elementi randomici
     stampa1 += "<li>" + n + "</li>";
    }
@@ -65,7 +66,12 @@ function()
 }
 );
 
-
+//RESET GAME
+breset.addEventListener("click",
+function sampleFunction() {
+  location.reload();
+}
+);
   //funzioni
 
   //numero random
