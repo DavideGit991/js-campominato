@@ -17,9 +17,11 @@ var bfacile = document.getElementById("facile");
 var bmedio = document.getElementById("medio");
 var bdifficile = document.getElementById("difficile");
 
-//genero 16 numeri diversi random tra 1 e 100 e li inserisco in un array
-var stampa1 = "";
 
+var stampa1 = "";
+var stampa2 = "";
+
+//genero 16 numeri diversi random tra 1 e 100 e li inserisco in un array
 while(arrayNumBombe.length < 16)
 {
    var n = randomNum(100);
@@ -86,7 +88,7 @@ function()
   //CAMPOMINATO con controlli in input dati utente
   function campoMinato(numBombe, possibilitàUte)
   {
-    var stampa2 = "";
+
     var tentativi = possibilitàUte - numBombe;
     //chiedo all'utente di inserire un numero 100-16 volte
     for(i=1; i<=tentativi; i++)
@@ -95,7 +97,7 @@ function()
 
       //controllo sul dato inserito dall'utente e se e' >100 o inserisce un NAN
       // o inserisce un qualcosa diverso da un numero allore abbasso il contatore e stampo un allert
-      if(numeroUte > 100 || isNaN(numeroUte) || Number.isNaN(numeroUte)   )
+      if(numeroUte > 100 || isNaN(numeroUte) || Number.isNaN(numeroUte) || arrayNumUte.includes(numeroUte) )
       {
        alert('ATTENZIONE! inserisci un valore valido compreso tra 1 e 100');
        i--;
@@ -137,6 +139,6 @@ function()
           document.getElementById("stampa2").innerHTML = stampa2;
           break;
       }
-
+      console.log();
     }
   }
