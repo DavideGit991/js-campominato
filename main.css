@@ -6,14 +6,14 @@
 }
 main{
   width: 100vw;
-  height: 100vh;
-  background-color: #F5F9FA;
+  background-color: antiquewhite;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .container{
   width: 50%;
+  background-color: #2d572c;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,6 +21,8 @@ main{
 
 }
 .box-title{
+  border-radius: 15px;
+background-color: #F5F9FA;
 width: 50%;
 display: flex;
 justify-content: center;
@@ -32,7 +34,7 @@ margin-bottom: 15px;
 .hr{
   height: 2px;
   width: 40%;
-  background-color: black;
+  background-color: #F5F9FA;
 }
 
 img{
@@ -41,6 +43,7 @@ width:10%;
 height: auto;
 }
 .box-scelta{
+background-color: #F5F9FA;
 width:60%;
 height: 40px;
 display: flex;
@@ -60,16 +63,47 @@ button{
 }
 
 
-
-
 /* proprietà sezione gioco */
+.box-numute{
+  background-color: #F5F9FA;
+  height: 85%;
+  border: 1px solid blue;
+  border-radius: 15px
+}
+.box-arraybombe{
+  background-color: #F5F9FA;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 15%;
+  border: 1px solid red;
+  border-radius: 15px;
+}
 
+#stampa1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  list-style-type: none;
+}
+#stampa1 li{
+  border: 1px solid black;
+  border-radius: 15px;
+  margin: 0 5px;
+  padding: 3px;
+}
 .box-bombe{
+display: flex;
+flex-direction: column;
 min-width: 482px;
 height: 500px;
 border: 1px solid black;
 border-radius: 15px;
 }
+
+/* proprieta score e esito */
 .box-esito{
   display: flex;
   align-items: center;
@@ -79,6 +113,7 @@ border-radius: 15px;
 /* border: 1px solid black; */
 }
 .esito{
+  background-color: #F5F9FA;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -88,6 +123,7 @@ border-radius: 15px;
   box-shadow: 2px 4px gray, 4px 2px gray;
 }
 .punteggio{
+  background-color: #F5F9FA;
   display: flex;
   align-items: center;
   justify-content: space-around;

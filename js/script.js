@@ -19,18 +19,24 @@ var bdifficile = document.getElementById("difficile");
 
 //genero 16 numeri diversi random tra 1 e 100 e li inserisco in un array
 var stampa1 = "";
+
 while(arrayNumBombe.length < 16)
 {
-
    var n = randomNum(100);
    if (arrayNumBombe.indexOf(n) == -1)
    {
     arrayNumBombe.push(n);
-
    }
-   stampa1 = stampa1 + "<li>" + arrayNumBombe[arrayNumBombe.length] + "</li>";
+
 }
   console.log(arrayNumBombe);
+
+//stampa dell'arraybombe
+for (i=0; i < 16; i++)
+{
+     stampa1 = stampa1 + "<li>" + arrayNumBombe[i] + "</li>";
+}
+//stampa
 
 
 //DIFFICOLTA' GIOCO FACILE
@@ -77,7 +83,7 @@ function()
     return Math.floor(Math.random()*num)+1;
   }
 
-  //CAMPOMINATO
+  //CAMPOMINATO con controlli in input dati utente
   function campoMinato(numBombe, possibilitàUte)
   {
     var stampa2 = "";
@@ -89,9 +95,9 @@ function()
 
       //controllo sul dato inserito dall'utente e se e' >100 o inserisce un NAN
       // o inserisce un qualcosa diverso da un numero allore abbasso il contatore e stampo un allert
-      if(numeroUte > 100 || isNaN(numeroUte) || Number.isNaN(numeroUte)  )
+      if(numeroUte > 100 || isNaN(numeroUte) || Number.isNaN(numeroUte)   )
       {
-       alert('ATTENZIONE! inserisci un valore compreso tra 1 e 100');
+       alert('ATTENZIONE! inserisci un valore valido compreso tra 1 e 100');
        i--;
       }
       //lo confronto con il mio array di bombe
