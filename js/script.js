@@ -79,36 +79,43 @@ function()
     {
      var numeroUte = parseInt(prompt("inserisci un numero per il campo minato da 1 a 100"));
 
-     //lo confronto con il mio array di bombe
-       //se non c'è e finisco il massimo numero di tentativi pusho in un arraynumeri utente e punteggio++ e l'utente ha vinto
-      if (arrayNumBombe.indexOf(numeroUte) == -1 && (arrayNumUte.length + 1) == tentativi )
+      //controllo sul dato inserito dall'utente e se e' >100 o inserisce un NAN
+      // o inserisce un qualcosa diverso da un numero allore abbasso il contatore e stampo un allert
+      if(numeroUte > 100 || isNaN(numeroUte) || Number.isNaN(numeroUte)  )
       {
-        punteggio += 1;
-        arrayNumUte.push(numeroUte);
-        console.log("arrayUte: ", arrayNumUte);
-        console.log("hai VINTO ed hai totalizzato: ", punteggio , "punti" );
-        document.getElementById("punteggio").innerHTML = punteggio;
-        document.getElementById("esito").innerHTML = "HAI VINTO E HAI TOT IL MAX PUNTEGGIO";
-        // alert('HAI VINTO E HAI TOT IL MAX PUNTEGGIO');
+       alert('ATTENZIONE! inserisci un valore compreso tra 1 e 100');
+       i--;
+      }
+      //lo confronto con il mio array di bombe
+        //se non c'è e finisco il massimo numero di tentativi pusho in un arraynumeri utente e punteggio++ e l'utente ha vinto
+      else if (arrayNumBombe.indexOf(numeroUte) == -1 && (arrayNumUte.length + 1) == tentativi )
+      {
+          punteggio += 1;
+          arrayNumUte.push(numeroUte);
+          console.log("arrayUte: ", arrayNumUte);
+          console.log("hai VINTO ed hai totalizzato: ", punteggio , "punti" );
+          document.getElementById("punteggio").innerHTML = punteggio;
+          document.getElementById("esito").innerHTML = "HAI VINTO E HAI TOT IL MAX PUNTEGGIO";
+          alert('HAI VINTO E HAI TOT IL MAX PUNTEGGIO');
       }
 
-      //se non c'è pusho in un arraynumeri utente e punteggio++
+        //se non c'è pusho in un arraynumeri utente e punteggio++
       else if (arrayNumBombe.indexOf(numeroUte) == -1)
       {
-        punteggio += 1;
-        arrayNumUte.push(numeroUte);
-        console.log("arrayUte: ", arrayNumUte);
-        console.log("Punteggio parziale: ", punteggio);
-        document.getElementById("punteggio").innerHTML = punteggio;
+          punteggio += 1;
+          arrayNumUte.push(numeroUte);
+          console.log("arrayUte: ", arrayNumUte);
+          console.log("Punteggio parziale: ", punteggio);
+          document.getElementById("punteggio").innerHTML = punteggio;
       }
 
-      //se c'è gioco finito e stampo quanti punti o "giri" l'utente ha fatto e gli dico hai perso
+        //se c'è gioco finito e stampo quanti punti o "giri" l'utente ha fatto e gli dico hai perso
       else if (arrayNumBombe.indexOf(numeroUte) != -1)
       {
-        console.log("ultimo numero scelto e': ", numeroUte);
-        console.log("hai PERSO e il tuo punteggio e': ", punteggio );
-        document.getElementById("esito").innerHTML = "HAI PERSO MI DISPIACE";
-        break;
+          console.log("ultimo numero scelto e': ", numeroUte);
+          console.log("hai PERSO e il tuo punteggio e': ", punteggio );
+          document.getElementById("esito").innerHTML = "HAI PERSO MI DISPIACE";
+          break;
       }
 
     }
