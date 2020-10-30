@@ -10,15 +10,9 @@
 // var numBombe = 16;
 // var possibilitàUte = 100;
 
+//variabili
 var arrayNumBombe=[];
 var arrayNumUte=[];
-var punteggio = 0
-var bfacile = document.getElementById("facile");
-var bmedio = document.getElementById("medio");
-var bdifficile = document.getElementById("difficile");
-var breset = document.getElementById("reset");
-
-var stampa1 = "";
 var stampa2 = "";
 
 //genero 16 numeri diversi random tra 1 e 100 e li inserisco in un array
@@ -27,53 +21,14 @@ while(arrayNumBombe.length < 16)
    var n = randomNum(100);
    if (arrayNumBombe.indexOf(n) == -1)
    {
-    arrayNumBombe.push(n);
-
-    //stampo a video gli elementi randomici
-    stampa1 += "<li>" + n + "</li>";
+    arrayNumBombe.push(n);  
+    stampa1 += "<li>" + n + "</li>"; //stampo a video gli elementi randomici
    }
 
 }
   console.log(arrayNumBombe);
 
-//DIFFICOLTA' GIOCO FACILE
-bfacile.addEventListener ("click",
-function()
-{
-  alert('HAI 84 tentativi per battermi');
-  campoMinato(16, 100);
-  document.getElementById("stampa1").innerHTML = stampa1;
-}
-);
-
-//DIFFICOLTA' GIOCO MEDIA
-bmedio.addEventListener("click",
-function()
-{
-  alert('HAI 64 tentativi per battermi');
-  campoMinato(16, 80);
-  document.getElementById("stampa1").innerHTML = stampa1;
-}
-);
-
-//DIFFICOLTA' GIOCO DIFFICILE
-bdifficile.addEventListener("click",
-function()
-{
-  alert('HAI 34 tentativi per battermi');
-  campoMinato(16, 50);
-  document.getElementById("stampa1").innerHTML = stampa1;
-}
-);
-
-//RESET GAME
-breset.addEventListener("click",
-function sampleFunction() {
-  location.reload();
-}
-);
-  //funzioni
-
+  //FUNZIONI
   //numero random
   function randomNum(num)
   {
@@ -109,7 +64,6 @@ function sampleFunction() {
       {
           punteggio += 1;
           arrayNumUte.push(numeroUte);
-          console.log(numeroUte);
           console.log("hai VINTO ed hai totalizzato: ", punteggio , "punti" );
           document.getElementById("punteggio").innerHTML = punteggio;
           document.getElementById("esito").innerHTML = "<h5 class='blu'>" + "HAI VINTO CON IL MAX PUNTEGGIO" + "</h5>";
@@ -124,7 +78,6 @@ function sampleFunction() {
       {
           punteggio += 1;
           arrayNumUte.push(numeroUte);
-          console.log(numeroUte);
           console.log("Punteggio parziale: ", punteggio);
           document.getElementById("punteggio").innerHTML = punteggio;
           stampa2 +=  "<li>" + numeroUte + "</li>" ;
@@ -134,7 +87,6 @@ function sampleFunction() {
         //se c'è gioco finito e stampo quanti punti o "giri" l'utente ha fatto e gli dico hai perso
       else if (arrayNumBombe.indexOf(numeroUte) != -1)
       {
-          console.log(numeroUte);
           console.log("ultimo numero scelto e': ", numeroUte);
           console.log("hai PERSO e il tuo punteggio e': ", punteggio );
           document.getElementById("esito").innerHTML = "<h5 class='red'>" + "HAI PERSO MI DISPIACE" + "</h5>";
