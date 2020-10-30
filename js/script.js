@@ -21,7 +21,7 @@ while(arrayNumBombe.length < 16)
    var n = randomNum(100);
    if (arrayNumBombe.indexOf(n) == -1)
    {
-    arrayNumBombe.push(n);  
+    arrayNumBombe.push(n);
     stampa1 += "<li>" + n + "</li>"; //stampo a video gli elementi randomici
    }
 
@@ -92,11 +92,13 @@ while(arrayNumBombe.length < 16)
           document.getElementById("esito").innerHTML = "<h5 class='red'>" + "HAI PERSO MI DISPIACE" + "</h5>";
           stampa2 +=  "<li>" + numeroUte + "</li>";
           document.getElementById("stampa2").innerHTML = stampa2;
+          document.getElementById("ultimonumero").innerHTML = "<h5 class='ultimonumero'>" + numeroUte + "</h5>";
           break;
       }else{}
+
+      document.getElementById("ultimonumero").innerHTML = "<h5 class='ultimonumero'>" + numeroUte + "</h5>";
       console.log(numeroUte);
 
     }
     console.log("arrayUte: ", arrayNumUte);
-    console.log(arrayNumUte[i-1]);
   }
